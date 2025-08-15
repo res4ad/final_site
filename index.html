@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Res4ad Hacker Portal</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- html2canvas Library -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <!-- Arka Plan Matrix Efekti için Canvas -->
+    <canvas id="bg-matrix-canvas"></canvas>
+
+    <!-- Yükleme Ekranı -->
+    <div id="loader">
+        <canvas id="loader-matrix-canvas"></canvas>
+        <div id="terminal-loader"><span id="typing-text"></span><span class="cursor"></span></div>
+    </div>
+
+    <!-- Ana İçerik -->
+    <div id="main-content">
+        <header>
+            <h1>&lt;HACKER_PORTAL/&gt;</h1>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="theme-toggle">
+                    <input type="checkbox" id="theme-toggle" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#blog" data-page="blog" class="nav-link active">1) blog</a></li>
+                <li><a href="#labs" data-page="labs" class="nav-link">2) labs</a></li>
+                <li><a href="#tools" data-page="tools" class="nav-link">3) tools</a></li>
+                <li><a href="#whoami" data-page="whoami" class="nav-link">4) whoami</a></li>
+            </ul>
+        </nav>
+
+        <!-- Komut Satırı Arayüzü (CLI) -->
+        <div id="cli-container">
+            <div id="cli-log"></div>
+            <div id="cli-input-line">
+                <label for="cli-input">res4ad@root:~$&nbsp;</label>
+                <input type="text" id="cli-input" placeholder="Komut girin ('help' yazabilirsiniz)..." autocomplete="off">
+            </div>
+        </div>
+
+        <main id="page-content">
+            <!-- Blog Sayfası -->
+            <section id="blog" class="page active">
+                <h2>[ Blog ]</h2>
+                <div class="post"><h3>Yeni Bir Zafiyet Keşfi: XYZ Protokolü</h3><p>...</p></div>
+                <div class="post"><h3>OSINT ile Hedef Analizi Teknikleri</h3><p>...</p></div>
+            </section>
+            
+            <!-- Labs Sayfası -->
+            <section id="labs" class="page">
+                <h2>[ Labs ]</h2>
+                <p>Siber güvenlik becerilerinizi test edebileceğiniz interaktif laboratuvar ortamları ve "Capture The Flag" (CTF) senaryoları yakında burada olacak. <strong>Status:</strong> <span style="color: var(--secondary-neon);">[ IN_PROGRESS ]</span></p>
+            </section>
+            
+            <!-- Tools Sayfası -->
+            <section id="tools" class="page">
+                <h2>[ Tools ]</h2>
+                <p>Sık kullandığım ve tavsiye ettiğim araçlar. Butonlar ilgili GitHub sayfalarına yönlendirir.</p>
+                <div class="tools-grid">
+                    <a href="https://github.com/nmap/nmap" target="_blank" rel="noopener noreferrer" class="btn">Nmap</a>
+                    <a href="https://github.com/foospidy/payloads" target="_blank" rel="noopener noreferrer" class="btn">PayloadsAllTheThings</a>
+                    <a href="https://github.com/hashcat/hashcat" target="_blank" rel="noopener noreferrer" class="btn">Hashcat</a>
+                    <a href="https://github.com/s0md3v/ReverseShell" target="_blank" rel="noopener noreferrer" class="btn">Reverse Shell Helper</a>
+                </div>
+            </section>
+
+            <!-- Whoami Sayfası -->
+            <section id="whoami" class="page">
+                <h2>[ whoami ]</h2>
+                <div class="content">
+                    <div class="text-content">
+                        <h3>i am res4ad</h3>
+                        <p>"I speak in packets and echoes."</p>
+                        <p>"Firewalls are just suggestions."</p>
+                        <p>"The system blinks; I don't."</p>
+
+                        <div id="card-generator">
+                            <h3>Hacker Card Generator</h3>
+                            <div id="username-input-container">
+                                <input type="text" id="username-input" placeholder="Enter username...">
+                                <button id="lock-btn" class="btn">Lock</button>
+                            </div>
+                            <div id="hacker-card">
+                                <h4>HACKER CARD</h4>
+                                <p>Username: <span id="card-username"></span></p>
+                                <p>Level: <span id="card-level"></span></p>
+                                <p>Skill: <span id="card-skill"></span></p>
+                                <div id="card-controls">
+                                    <button id="refresh-btn" class="btn secondary">Refresh</button>
+                                    <button id="reset-btn" class="btn">Reset Card</button>
+                                    <button id="download-btn" class="btn">Download PNG</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anonymous-box">
+                        <div class="glitch-text">ANONYMOUS</div>
+                        <p class="caption">admin deleted this image</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Gizli Sayfalar -->
+            <section id="admin" class="page"><p class="hidden-page-content">you are really good hacker</p></section>
+            <section id="hacker" class="page"><p class="hidden-page-content">you are really good hacker</p></section>
+            <section id="sex" class="page"><p class="hidden-page-content">you are really good hacker</p></section>
+        </main>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
